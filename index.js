@@ -2,9 +2,12 @@ const Discord = require("discord.js");
 const fs = require("fs");
 require("path");
 const mongoose = require("mongoose");
+const Prefix = require("./models/prefix");
+const { Permissions } = require("discord.js");
 
 function handler(path, folder, bot, config) {
 	bot.commands = new Discord.Collection();
+	console.log(`[Isli commander] The prefix has been set to ${config.prefix}`);
 	if (config.mongoURI) {
 		mongoose
 			.connect(
@@ -46,8 +49,6 @@ function handler(path, folder, bot, config) {
 			console.log("Couldn't find commands.");
 			return;
 		}
-		var a = {};
-		global.aliases = {};
 		jsfile.forEach((f, i) => {
 			let props = require(`${__dirname}${f}`);
 			if (!config.mongoURI) {

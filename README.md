@@ -12,17 +12,17 @@ discord.js v13 or newer
 ## Installation
 
 ```bash
-npm i isli-commander
+npm i isli_commander
 ```
 
 ## Support & Feature Request
 
-Click [here](https://github.com/Tofix26/isli-commander/issues) (Discord support & Support & Feature Request in the work)
+Click [here](https://github.com/Tofix26/isli-commander/issues) (Discord server for Support & Feature Request in the work)
 
 ## Usage
 
 ```js
-const handler = require("isli-commander");
+const handler = require("isli_commander");
 require("path");
 const DJS = require("discord.js");
 const { Intents } = require("discord.js");
