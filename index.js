@@ -56,7 +56,6 @@ function handler(path, folder, bot, config) {
 						}
 					}
 					bot.commands.set(props.help.name, props);
-					aliases = a;
 				}
 			} else {
 				if (props.help.aliases) {
@@ -65,7 +64,6 @@ function handler(path, folder, bot, config) {
 					}
 				}
 				bot.commands.set(props.help.name, props);
-				aliases = a;
 			}
 		});
 	});
