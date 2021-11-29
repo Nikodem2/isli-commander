@@ -1,3 +1,24 @@
+## Isli commander
+
+Isli commander is a Discord.JS command handler made by Tofix.js. The goal of the package is to make simple and easy to make commands in discord.js wihout worrying about command handler
+
+## Dependecies
+
+Node.js v16.6 or newer\
+discord.js v13 or newer
+
+## Documentation (coming soon)
+
+## Installation
+
+```bash
+npm i isli-commander
+```
+
+## Support & Feature Request
+
+Click here
+
 ## Usage
 
 ```js
