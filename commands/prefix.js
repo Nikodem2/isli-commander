@@ -1,18 +1,7 @@
 const Discord = require("discord.js");
 const Prefix = require("../models/prefix");
 const mongoose = require("mongoose");
-const config = require("../config.json");
-mongoose
-	.connect(
-		"mongodb+srv://2137:LtMTvXirxLTuPVQp@cluster0.zonfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-		{
-			useUnifiedTopology: true,
-			useNewUrlParser: true,
-		}
-	)
-	.then(console.log("Connected to mongo"));
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, config) => {
 	if (args[0] == config.prefix) {
 		await Prefix.remove({ prefix: config.prefix });
 	} else {
