@@ -17,7 +17,7 @@ npm i isli-commander
 
 ## Support & Feature Request
 
-Click here
+Click [here](https://github.com/Tofix26/isli-commander/issues) (Discord support & Support & Feature Request in the work)
 
 ## Usage
 
