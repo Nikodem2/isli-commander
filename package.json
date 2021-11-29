@@ -14,5 +14,13 @@
 	"dependencies": {
 		"discord.js": "^13.3.1",
 		"mongoose": "^6.0.13"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Tofix26/isli-commander.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Tofix26/isli-commander/issues"
+	},
+	"homepage": "https://github.com/Tofix26/isli-commander#readme"
 }
