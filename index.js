@@ -69,9 +69,7 @@ function handler(path, folder, bot, config) {
 	});
 	bot.on("messageCreate", async (message) => {
 		if (message.mentions.members.first()) {
-			if (
-				message.mentions.members.first().user.username == client.user.username
-			) {
+			if (message.mentions.members.first().user.username == bot.user.username) {
 				if (config.mongoURI != undefined) {
 					await Prefix.find({
 						guildID: message.guild.id,
