@@ -10,13 +10,10 @@ function handler(path, folder, bot, config) {
 	console.log(`[Isli commander] The prefix has been set to ${config.prefix}`);
 	if (config.mongoURI) {
 		mongoose
-			.connect(
-				"mongodb+srv://2137:LtMTvXirxLTuPVQp@cluster0.zonfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-				{
-					useUnifiedTopology: true,
-					useNewUrlParser: true,
-				}
-			)
+			.connect(config.mongoURI, {
+				useUnifiedTopology: true,
+				useNewUrlParser: true,
+			})
 			.then(console.log("Connected to mongo"));
 	}
 	fs.readdir((path += folder), (err, files) => {
@@ -73,6 +70,24 @@ function handler(path, folder, bot, config) {
 		});
 	});
 	bot.on("messageCreate", async (message) => {
+		if (message.mentions.members.first()) {
+			if (
+				message.mentions.members.first().user.username == client.user.username
+			) {
+				if (config.mongoURI != undefined) {
+					await Prefix.find({
+						guildID: message.guild.id,
+					}).then((data) => {
+						if (data[0]) {
+							E = data[0].prefix;
+							message.channel.send(`My prefix is ${E}`);
+						} else {
+							message.channel.send(`My prefix is ${config.prefix}`);
+						}
+					});
+				}
+			}
+		}
 		if (message.author.bot) return;
 		if (message.channel.type === "dm") return;
 		if (config.mongoURI) {
