@@ -1,6 +1,6 @@
 {
 	"name": "isli_commander",
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"description": "Simple command manager for discord.js",
 	"main": "index.js",
 	"keywords": [
