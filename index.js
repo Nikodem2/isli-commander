@@ -118,9 +118,13 @@ function handler(path, folder, bot, config) {
 						Permissions.FLAGS[commandfile.help.permissions]
 					)
 				) {
-					if (commandfile.help.owner == true && config.owners.includes(message.author.id))
-					{
+					if (commandfile.help.owner == true) {
+						if (config.owners.includes(message.author.id)) {
 							commandfile.run(bot, message, args, config);
+						} else {
+							message.reply({ content: "Only for the owner of the bot", ephemeral: true });
+						}
+					}
 				} else {
 					message.reply({ content: "No perms", ephemeral: true });
 				}
